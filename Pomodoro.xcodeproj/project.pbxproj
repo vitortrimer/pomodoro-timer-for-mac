@@ -13,6 +13,7 @@
 		A4A3378129848F40000C745A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4A3378029848F40000C745A /* Preview Assets.xcassets */; };
 		A4A3378A29849101000C745A /* Pomodoro.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A3378929849101000C745A /* Pomodoro.swift */; };
 		A4A3378C2984927C000C745A /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A3378B2984927C000C745A /* Home.swift */; };
+		A4A9E913298B255300EE2197 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A9E912298B255300EE2197 /* Config.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		A4A3378029848F40000C745A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A4A3378929849101000C745A /* Pomodoro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pomodoro.swift; sourceTree = "<group>"; };
 		A4A3378B2984927C000C745A /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		A4A9E912298B255300EE2197 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				A4A3378B2984927C000C745A /* Home.swift */,
+				A4A9E912298B255300EE2197 /* Config.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -161,6 +164,7 @@
 			files = (
 				A4A3377C29848F3E000C745A /* ContentView.swift in Sources */,
 				A4A3378A29849101000C745A /* Pomodoro.swift in Sources */,
+				A4A9E913298B255300EE2197 /* Config.swift in Sources */,
 				A4A3378C2984927C000C745A /* Home.swift in Sources */,
 				A4A3377A29848F3E000C745A /* PomodoroApp.swift in Sources */,
 			);
