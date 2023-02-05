@@ -21,15 +21,17 @@ struct Config: View {
                 Spacer()
                 VStack {
                     Button("Reset to default") {
-                        
+                        self.focusTimeValue = 30.0
+                        self.restTimeValue = 10.0
+                        self.saveSettings(focusValue: 30.0, restValue: 10.0)
                     }
                     .foregroundColor(.white)
                     .fontWeight(.semibold)
                     .clipShape(Capsule())
                     .background(Color.black.opacity(0.08))
                     HStack(alignment: .center, spacing: 8) {
-                        Button("Save") {
-                            
+                        Button("Save and close") {
+                            self.saveSettings(focusValue: focusTimeValue, restValue: restTimeValue)
                         }
                         .foregroundColor(.white)
                         .fontWeight(.semibold)
@@ -85,6 +87,12 @@ struct Config: View {
     private enum PickerType: String {
         case rest = "Rest time"
         case focus = "Focus time"
+    }
+    
+    private func saveSettings(focusValue focus: Double, restValue rest: Double) {
+        let defaults = UserDefaults.standard
+        defaults.set(focus, forKey: "focus")
+        defaults.set(rest, forKey: "rest")
     }
 }
 
