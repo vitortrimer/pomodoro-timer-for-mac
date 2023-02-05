@@ -9,24 +9,66 @@ import SwiftUI
 
 struct Config: View {
     
-    @State private var speed = 0.0
+    @State private var focusTimeValue = 0.0
+    @State private var restTimeValue = 0.0
     
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
             VStack {
-                TimePickerConfig(pickerType: .focus)
+                SummaryView()
+                TimePickerConfigView(pickerType: .focus, sliderValue: $focusTimeValue)
+                TimePickerConfigView(pickerType: .rest, sliderValue: $restTimeValue)
+                Spacer()
+                VStack {
+                    Button("Reset to default") {
+                        
+                    }
+                    .foregroundColor(.white)
+                    .fontWeight(.semibold)
+                    .clipShape(Capsule())
+                    .background(Color.black.opacity(0.08))
+                    HStack(alignment: .center, spacing: 8) {
+                        Button("Save") {
+                            
+                        }
+                        .foregroundColor(.white)
+                        .fontWeight(.semibold)
+                        .clipShape(Capsule())
+                        .background(Color.black.opacity(0.08))
+                        Button("Cancel") {
+                            
+                        }
+                        .foregroundColor(.white)
+                        .fontWeight(.semibold)
+                        .clipShape(Capsule())
+                        .background(Color.black.opacity(0.08))
+                    }
+                }
+                .padding(.bottom, 16)
             }
-            Text("Time - \(speed)")
         }
     }
     
+    @ViewBuilder
+    func SummaryView() -> some View {
+        HStack{
+            VStack(alignment: .leading, spacing: 8) {
+                Text("Current pomodoro config:")
+                Text("Focus: \(Int(focusTimeValue))m")
+                Text("Rest: \(Int(restTimeValue))m")
+            }
+        }
+        .padding(16)
+        .background(Color.white.opacity(0.1))
+        .cornerRadius(16)
+    }
     
     @ViewBuilder
-    private func TimePickerConfig(pickerType type: PickerType) -> some View {
+    private func TimePickerConfigView(pickerType type: PickerType, sliderValue value: Binding<Double>) -> some View {
         VStack(alignment: .leading, spacing: 8) {
             Text("\(type.rawValue):")
             Slider(
-                value: $speed,
+                value: value,
                 in: 0...60,
                 step: 1
             ) {
